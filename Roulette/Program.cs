@@ -13,6 +13,16 @@ namespace Roulette
             Console.WriteLine("Geben Sie Ihren wetteinsatz an");
             Console.WriteLine("Geben Sie ihre Zahl an");
             Console.WriteLine("Geben Sieihre Farbe an");
+
+            //TODO   
+            //Guthaben wird draufaddiet abgezoigen
+            //spiellogik loop runde roundstart event einsatz wier agefragt  
+            //event für spiel 
+            //postfreundevent 
+            //Abprüfungsevent
+            //eventhandling
+            //rotschwarz
+            //gerade undgerade
         }
     }
 }

@@ -15,15 +15,21 @@ namespace Roulette
         private string _farbe;
         private int _einsatz;
         private double _guthaben;
-        public double Guthaben { get; set; }
-        //Guthaben wird draufaddiet abgezoigen
-        //spiellogik loop runde roundstart event einsatz wier agefragt  
-        //event für spiel 
-        //postfreundevent 
-        //Abprüfungsevent
-        //eventhandling
-        //rotschwarz
-        //gerade undgerade
+        public double Guthaben {
+            get => _guthaben;
+            set
+            {
+                if (_guthaben != null)
+                {
+                    _guthaben = value;
+                }
+                else
+                {
+                    InvaildMeasure();
+                }
+            }
+        }
+        
         public string Name { 
             get => _name;
             set
@@ -39,10 +45,56 @@ namespace Roulette
             }
         }
 
-        public int Zahl { get; set; }
+        public int Zahl
+        {
+            get => _zahl;
+            set
+            {
+                if (_zahl != 0)
+                {
+                    _zahl = value;
+                }
+                else
+                {
+                    InvaildMeasure();
+                }
+            }
+        }
 
-        public string Farbe { get; set; }
+        public string Farbe {
+            get => _farbe;
+            set
+            {
+                if (_farbe != null)
+                {
+                    _farbe = value;
+                }
+                else
+                {
+                    InvaildMeasure();
+                }
+            }
+        }
 
-        public int Einsatz { get; set; }
+        public int Einsatz {
+            get => _einsatz;
+            set
+            {
+                if (_einsatz != 0)
+                {
+                    _einsatz = value;
+                }
+                else
+                {
+                    InvaildMeasure();
+                }
+            }
+        }
+
+        
+        public Spieler()
+        {
+
+        }
     }
 }
