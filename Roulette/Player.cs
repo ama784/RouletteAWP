@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Roulette
 {
-    public class Player
+    public  class Player
     {
-        public event ValueChangesHandler ValueChanged;
-        public string Name { get; set; }
-        public int PlayRounds { get; set; }
-        public double Cash { get; set; }
-        public string SetOnColor { get; set; }
+        public  event ValueChangesHandler ValueChanged;
+        public static string Name { get; set; }
+        public static int PlayRounds { get; set; }
+        public static double Cash { get; set; }
+        public static string SetOnColor { get; set; }
+        public static int SetOnNumber { get; set; }
 
-        public double CurrentAccountBalance { get; set; }
+        public static double CurrentAccountBalance { get; set; }
 
         public void OnValueChanged()
         {
