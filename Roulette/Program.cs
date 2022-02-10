@@ -14,9 +14,10 @@ namespace Roulette
             Player playerOne = new Player();
             p.GetPlayerInformation(playerOne);
 
-            Console.WriteLine($"Hallo {Player.Name} : \n dein jetziges  Guthaben Beträgt  {Player.CurrentAccountBalance} ");
+            _greetingCurrentBalanace();
             playerOne.ValueChanged += MyValueChanged;
             playerOne.OnValueChanged();
+            Console.WriteLine("Spiel Ende");
             Console.ReadKey();
 
             //TODO   
@@ -32,7 +33,7 @@ namespace Roulette
 
         }
 
-        public void GetPlayerInformation(Player playerOne)
+        private void GetPlayerInformation(Player playerOne)
         {
             try
             {                
@@ -55,6 +56,7 @@ namespace Roulette
 
         public static void MyValueChanged(object sender, ValueChangeEventArgs e)
         {
+            //treffer
             try
             {
                 int i = 0;
@@ -83,12 +85,12 @@ namespace Roulette
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("Fehler : " +ex);
             }
 
         }
 
-        public static void ExamineColorNumber(ValueChangeEventArgs e)
+        private static void ExamineColorNumber(ValueChangeEventArgs e)
         {
             if (Player.SetOnColor == e.ResultColor)
             {
@@ -105,7 +107,7 @@ namespace Roulette
             }
         }
 
-        public static void SetRandomNumberColor(ValueChangeEventArgs e)
+        private static void SetRandomNumberColor(ValueChangeEventArgs e)
         {
             Random number = new Random();
             Random color = new Random();
@@ -122,6 +124,11 @@ namespace Roulette
         private static void _ShowCurrentBalance()
         {
             Console.WriteLine($"Guthaben Aktualisierung  {Player.CurrentAccountBalance} ");
+        }
+
+        private static void _greetingCurrentBalanace()
+        {
+            Console.WriteLine($"Hallo {Player.Name} : \n dein jetziges  Guthaben Beträgt  {Player.CurrentAccountBalance} ");
         }
     }   
 }
