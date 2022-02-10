@@ -10,11 +10,14 @@ namespace Roulette
     {
         static void Main(string[] args)
         {
-            Spieler player = null;
-            player = GetSpielerInformations(player);
-            Console.WriteLine("Guten TAG  "+ player.Name +" \n \n Hier Guthaben entspricht" + string.Format("{0:C}", player.Guthaben));
-            player = GetSpielerEinsatzFarbe(player);
-            
+            Program p = new Program();
+            Player playerOne = new Player();
+            p.GetPlayerInformation(playerOne);
+
+            Console.WriteLine($"Hallo {playerOne.Name} : \n dein jetziges  Guthaben Beträgt  {playerOne.CurrentAccountBalance} ");
+            playerOne.ValueChanged += MyValueChanged;
+            playerOne.OnValueChanged();
+            Console.ReadKey();
 
             //TODO   
             //Guthaben wird draufaddiet abgezoigen
@@ -26,36 +29,27 @@ namespace Roulette
             //rotschwarz
             //gerade undgerade
             // Random instanz
+
         }
 
-        private static void Player_InvaildMeasure(object sender, Spieler e)
+        public void GetPlayerInformation(Player playerOne)
         {
-            Console.WriteLine("Invaction chain ");
-            
+            Console.WriteLine("Geben Sie Ihren Namen ein");
+            playerOne.Name = Console.ReadLine();
+
+            Console.WriteLine("Geben Sie an wie oft sie Spielen wollen");
+            playerOne.PlayRounds = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Geben Sie an mit welchen Betrag Sie Spielen wollen");
+            playerOne.Cash = Convert.ToDouble(Console.ReadLine());
+
+            playerOne.CurrentAccountBalance = 55.45;
         }
 
-        public static Spieler GetSpielerInformations(Spieler player)
+        public static void MyValueChanged(object sender, ValueChangeEventArgs e)
         {
-            player = new Spieler();
-            player.InvaildMeasure += Player_InvaildMeasure;
-            Console.WriteLine("Geben Sie ihren Namen ein");
-            player.Name = Console.ReadLine();
-            player.Guthaben = 78.78;
-            return player;
+            Console.WriteLine("Beginn the Game");
         }
 
-        public static Spieler GetSpielerEinsatzFarbe(Spieler player)
-        {
-            Console.WriteLine("Geben Sie Ihren Wetteinsatz an");
-            player.Einsatz = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Geben Sie ihre Zahl an");
-            player.Zahl = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Geben Sie die Farbe ein");
-            player.Farbe = Console.ReadLine().ToLower();
-
-            return player;
-        }
     }   
 }
