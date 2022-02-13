@@ -15,8 +15,10 @@ namespace Roulette
             p.GetPlayerInformation(playerOne);
 
             _greetingCurrentBalanace();
-            playerOne.ValueChanged += MyValueChanged;
+            //playerOne.ValueChanged += MyValueChanged;
+            playerOne.PlayerGetToPlayRoom(playerOne);
             playerOne.OnValueChanged();
+            playerOne.PlayerLeaveThePlayRoom(playerOne);
             Console.WriteLine("Spiel Ende");
             Console.ReadKey();
 

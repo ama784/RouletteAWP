@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Roulette
+namespace WPF_Game_RoulettLogic
 {
     public  class Player
     {
@@ -29,13 +29,13 @@ namespace Roulette
 
         public void PlayerGetToPlayRoom(Player player)
         {
-            player.ValueChanged += Program.MyValueChanged;
+            //player.ValueChanged += Program.MyValueChanged;
 
         }
 
         public void PlayerLeaveThePlayRoom(Player player)
         {
-            player.ValueChanged -= Program.MyValueChanged;
+            //player.ValueChanged -= Program.MyValueChanged;
         }
     }
 }

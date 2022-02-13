@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:WPF_Game_RoulettLogic"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
-        
+        <Label Name="Title" Content="Roulett   Spiel" HorizontalAlignment="Left" Margin="285,31,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" FontStyle="Italic" FontFamily="Berlin Sans FB"/>
+        <Button Name="btnStarten" Content="Spiel Starten" HorizontalAlignment="Left" Margin="634,340,0,0" VerticalAlignment="Top" Height="43" Width="124" Click="btnStarten_Click"/>
+        <Button Name="btnEingabenLöschen" Content="Eingaben Löschen" HorizontalAlignment="Left" Margin="474,341,0,0" VerticalAlignment="Top" Height="42" Width="124" Click="btnEingabenLöschen_Click"/>
+        <TextBox Name="Txt_Name" HorizontalAlignment="Left" Margin="474,131,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="284" Height="30"/>
+        <TextBox Name="Txt_Rounds" HorizontalAlignment="Left" Margin="474,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="288" Height="30"/>
+        <TextBox Name="Txt_CashPerRound" HorizontalAlignment="Left" Margin="474,269,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30"/>
+        <Image Name="imageRoulettPremium" HorizontalAlignment="Left" Height="198" VerticalAlignment="Center" Width="606" Source="/RoulettLogo_450x450-removebg-preview.png" Stretch="UniformToFill" Margin="-111,0,0,0"/>
+        <Label Name="lblName" Content="Name:" HorizontalAlignment="Left" Margin="474,100,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblGameRound" Content="Spiel Runden:" HorizontalAlignment="Left" Margin="474,166,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblMoneyPerRound" Content="Geld pro Runde:" HorizontalAlignment="Left" Margin="474,237,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblGameCurrentGameBalance" Content="GameBalance" HorizontalAlignment="Left" Margin="24,73,0,0" VerticalAlignment="Top"/>
+
+
     </Grid>
 </Window>
