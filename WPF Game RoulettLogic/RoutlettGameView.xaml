@@ -9,6 +9,16 @@
       Title="Page1">
 
     <Grid Background="White">
-        
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="240,180,0,0" VerticalAlignment="Top" Width="100" Background="Red">
+            <Label Content="Label" Margin="21,32,9,9" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="White"/>
+        </Border>
+        <Button x:Name="BtnStartGame" Content="Roulette Spielen" HorizontalAlignment="Left" Height="33" Margin="639,367,0,0" VerticalAlignment="Top" Width="122" Click="BtnStartGame_Click"/>
+        <TextBox x:Name="Txt_CashPerRound" HorizontalAlignment="Left" Margin="473,307,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30"/>
+        <Label x:Name="lblMoneyPerRound" Content="Farbe:" HorizontalAlignment="Left" Margin="473,275,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txt_CashPerRound_Copy" HorizontalAlignment="Left" Margin="473,221,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30"/>
+        <Label x:Name="lblMoneyPerRound_Copy" Content="Zahl" HorizontalAlignment="Left" Margin="473,189,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txt_CashPerRound_Copy1" HorizontalAlignment="Left" Margin="473,137,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30"/>
+        <Label x:Name="lblMoneyPerRound_Copy1" Content="Einsatz pro Runde" HorizontalAlignment="Left" Margin="473,105,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

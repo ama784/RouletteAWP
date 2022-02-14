@@ -24,5 +24,10 @@ namespace WPF_Game_RoulettLogic
         {
             InitializeComponent();
         }
+
+        private void BtnStartGame_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

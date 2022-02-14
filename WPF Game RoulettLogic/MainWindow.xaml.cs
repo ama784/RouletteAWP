@@ -24,6 +24,7 @@ namespace WPF_Game_RoulettLogic
         {
             InitializeComponent();
             ClearTextFields();
+            InVisibleHiddenInitialize();
         }
 
         public void ClearTextFields()
@@ -50,6 +51,8 @@ namespace WPF_Game_RoulettLogic
             Player player = new Player();
             GetPlayerInformation(player);
             InVisibleHiddenStartBtn();
+            InVisibleGameStuff();
+            GetGameBelance();
 
 
         }
@@ -79,12 +82,21 @@ namespace WPF_Game_RoulettLogic
 
         public void InVisibleGameStuff()
         {
-
+            lblGameCurrentGameBalance.Visibility = Visibility.Visible;
         }
 
         public void InVisibleTrue()
         {
             
+        }
+
+        public void GetGameBelance()
+        {
+            lblGameCurrentGameBalance.Content = $"Guthaben:  { Player.CurrentAccountBalance}€";
+        }
+        public void CalculateCurrentsAccountBalance()
+        {
+
         }
     }
 }
