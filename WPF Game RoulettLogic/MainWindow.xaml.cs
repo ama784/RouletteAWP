@@ -29,8 +29,8 @@ namespace WPF_Game_RoulettLogic
 
         public void ClearTextFields()
         {
-            Txt_CashPerRound.Text = "";
-            Txt_Rounds.Text = "";
+            //Txt_CashPerRound.Text = "";
+            //Txt_Rounds.Text = "";
             Txt_Name.Text = "";
         }
 
@@ -42,19 +42,33 @@ namespace WPF_Game_RoulettLogic
         private void GetPlayerInformation(Player playerOne)
         {
             Player.Name = Convert.ToString(Txt_Name.Text);
-            Player.Cash = Convert.ToDouble(Txt_CashPerRound.Text);
-            Player.PlayRounds = Convert.ToInt32(Txt_Rounds.Text);
+            //Player.Cash = Convert.ToDouble(Txt_CashPerRound.Text);
+            //Player.PlayRounds = Convert.ToInt32(Txt_Rounds.Text);
+            Player.CurrentAccountBalance = 55.74;
         }
 
         private void btnStarten_Click(object sender, RoutedEventArgs e)
         {
-            Player player = new Player();
-            GetPlayerInformation(player);
-            InVisibleHiddenStartBtn();
-            InVisibleGameStuff();
-            GetGameBelance();
-
-
+            try
+            {
+                Player player = new Player();
+                if (Txt_Name.Text != "")
+                {
+                    GetPlayerInformation(player);
+                    InVisibleHiddenStartBtn();
+                    InVisibleGameStuff();
+                    GetGameBelance();
+                }
+                else
+                {
+                    lblName.Content = " Name:   Bitte geben Sie Ihren Namen ein";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblFehlermeldung.Visibility = Visibility.Visible;
+                lblFehlermeldung.Content = ex;
+            }
         }
 
         private void Frame_Navigated(object sender, NavigationEventArgs e)
@@ -64,11 +78,7 @@ namespace WPF_Game_RoulettLogic
 
         public void InVisibleHiddenStartBtn()
         {
-            Txt_CashPerRound.Visibility = Visibility.Hidden;
-            Txt_Rounds.Visibility=Visibility.Hidden;
             Txt_Name.Visibility = Visibility.Hidden;
-            lblMoneyPerRound.Visibility = Visibility.Hidden;
-            lblGameRound.Visibility = Visibility.Hidden;
             lblName.Visibility = Visibility.Hidden;
             imageRoulettPremium.Visibility = Visibility.Hidden;
             btnEingabenLöschen.Visibility = Visibility.Hidden;
@@ -83,6 +93,22 @@ namespace WPF_Game_RoulettLogic
         public void InVisibleGameStuff()
         {
             lblGameCurrentGameBalance.Visibility = Visibility.Visible;
+            Ball.Visibility = Visibility.Visible;
+
+            lblMoneyPerRound_Copy1.Visibility = Visibility.Visible;
+            Txt_CashPerRound_Copy1.Visibility = Visibility.Visible;
+           
+            Txt_CashPerRound_Copy.Visibility = Visibility.Visible;
+            lblMoneyPerRound_Copy.Visibility = Visibility.Visible;
+            Txt_CashPerRound_Copy1.Visibility = Visibility.Visible;
+            txtColor.Visibility = Visibility.Visible;
+            lblColor.Visibility = Visibility.Visible;
+
+        }
+
+        public void InVisibleInputLbls()
+        {
+
         }
 
         public void InVisibleTrue()
@@ -92,11 +118,13 @@ namespace WPF_Game_RoulettLogic
 
         public void GetGameBelance()
         {
-            lblGameCurrentGameBalance.Content = $"Guthaben:  { Player.CurrentAccountBalance}€";
+            lblGameCurrentGameBalance.Content = $"Spieler {Player.Name}\n\nGuthaben:  { Player.CurrentAccountBalance}€";
         }
         public void CalculateCurrentsAccountBalance()
         {
 
         }
+
+        
     }
 }

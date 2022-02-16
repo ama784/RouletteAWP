@@ -9,17 +9,25 @@
 
     <Grid>
         <Label Name="Title" Content="Roulett   Spiel" HorizontalAlignment="Left" Margin="285,31,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" FontStyle="Italic" FontFamily="Berlin Sans FB"/>
-        <Button Name="btnStarten" Content="Spiel Starten" HorizontalAlignment="Left" Margin="634,340,0,0" VerticalAlignment="Top" Height="43" Width="124" Click="btnStarten_Click"/>
-        <Button Name="btnEingabenLöschen" Content="Eingaben Löschen" HorizontalAlignment="Left" Margin="474,341,0,0" VerticalAlignment="Top" Height="42" Width="124" Click="btnEingabenLöschen_Click"/>
-        <TextBox Name="Txt_Name" HorizontalAlignment="Left" Margin="474,131,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="284" Height="30"/>
-        <TextBox Name="Txt_Rounds" HorizontalAlignment="Left" Margin="474,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="288" Height="30"/>
-        <TextBox Name="Txt_CashPerRound" HorizontalAlignment="Left" Margin="474,269,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30"/>
+        <Button Name="btnStarten" Content="Spiel Starten" HorizontalAlignment="Left" Margin="634,340,0,0" VerticalAlignment="Top" Height="43" Width="124" Click="btnStarten_Click" Background="White" BorderBrush="#FF080808"/>
+        <Button Name="btnEingabenLöschen" Content="Eingaben Löschen" HorizontalAlignment="Left" Margin="474,341,0,0" VerticalAlignment="Top" Height="42" Width="124" Click="btnEingabenLöschen_Click" Background="White" BorderBrush="Black"/>
+        <TextBox Name="Txt_Name" HorizontalAlignment="Left" Margin="474,223,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="284" Height="30"/>
         <Image Name="imageRoulettPremium" HorizontalAlignment="Left" Height="198" VerticalAlignment="Center" Width="606" Source="/RoulettLogo_450x450-removebg-preview.png" Stretch="UniformToFill" Margin="-111,0,0,0"/>
-        <Label Name="lblName" Content="Name:" HorizontalAlignment="Left" Margin="474,100,0,0" VerticalAlignment="Top"/>
-        <Label Name="lblGameRound" Content="Spiel Runden:" HorizontalAlignment="Left" Margin="474,166,0,0" VerticalAlignment="Top"/>
-        <Label Name="lblMoneyPerRound" Content="Geld pro Runde:" HorizontalAlignment="Left" Margin="474,237,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblName" Content="Geben Sie ihren Namen ein::" HorizontalAlignment="Left" Margin="474,192,0,0" VerticalAlignment="Top"/>
         <Label Name="lblGameCurrentGameBalance" Content="GameBalance" HorizontalAlignment="Left" Margin="24,73,0,0" VerticalAlignment="Top"/>
 
-
+        <Border Name="Ball" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="240,180,0,0" VerticalAlignment="Top" Width="100" Background="Red" Visibility="Hidden">
+            <Label Content="Label" Margin="21,32,9,9" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="White"/>
+        </Border>
+        <TextBox x:Name="Txt_CashPerRound" HorizontalAlignment="Left" Margin="473,307,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30" Visibility="Hidden"  />
+        <Label x:Name="lblMoneyPerRound" Content="Farbe:" HorizontalAlignment="Left" Margin="473,275,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="Txt_CashPerRound_Copy" HorizontalAlignment="Left" Margin="473,221,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30" Visibility="Hidden"/>
+        <Label x:Name="lblMoneyPerRound_Copy" Content="Zahl" HorizontalAlignment="Left" Margin="473,189,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="Txt_CashPerRound_Copy1" HorizontalAlignment="Left" Margin="473,137,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30" Visibility="Hidden"/>
+        <Label x:Name="lblMoneyPerRound_Copy1" Content="Einsatz pro Runde" HorizontalAlignment="Left" Margin="473,105,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label Name="lblFehlermeldung" Content="Fehlermeldung" HorizontalAlignment="Left" Margin="474,110,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="lblColor" HorizontalAlignment="Left" Margin="473,307,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30" Visibility="Hidden"   />
+        <Label x:Name="txtColor" Content="Farbe:" HorizontalAlignment="Left" Margin="473,275,0,0" VerticalAlignment="Top" Visibility="Hidden" />
+        <Label Name="lblErebnis" Content="Ergebnis:" HorizontalAlignment="Left" Margin="240,141,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
