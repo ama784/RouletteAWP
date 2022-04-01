@@ -17,17 +17,19 @@
         <Label Name="lblGameCurrentGameBalance" Content="GameBalance" HorizontalAlignment="Left" Margin="24,73,0,0" VerticalAlignment="Top"/>
 
         <Border Name="Ball" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="240,180,0,0" VerticalAlignment="Top" Width="100" Background="Red" Visibility="Hidden">
-            <Label Content="Label" Margin="21,32,9,9" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="White"/>
+            <Label x:Name="BallLbl" Content="Label" Margin="21,32,9,9" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="White"/>
         </Border>
-        <TextBox x:Name="Txt_CashPerRound" HorizontalAlignment="Left" Margin="473,307,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30" Visibility="Hidden"  />
+        <TextBox x:Name="Txt_Farbe" HorizontalAlignment="Left" Margin="473,307,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30"  Visibility="Hidden" />
         <Label x:Name="lblMoneyPerRound" Content="Farbe:" HorizontalAlignment="Left" Margin="473,275,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <TextBox x:Name="Txt_CashPerRound_Copy" HorizontalAlignment="Left" Margin="473,221,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30" Visibility="Hidden"/>
-        <Label x:Name="lblMoneyPerRound_Copy" Content="Zahl" HorizontalAlignment="Left" Margin="473,189,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <TextBox x:Name="Txt_CashPerRound_Copy1" HorizontalAlignment="Left" Margin="473,137,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30" Visibility="Hidden"/>
-        <Label x:Name="lblMoneyPerRound_Copy1" Content="Einsatz pro Runde" HorizontalAlignment="Left" Margin="473,105,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="Txt_Number" HorizontalAlignment="Left" Margin="473,221,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30" Visibility="Hidden"/>
+        <Label x:Name="lblMoneyPerRound_Copy" Content="Zahl von 1-36" HorizontalAlignment="Left" Margin="473,189,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="Txt_MoneyPerRound" HorizontalAlignment="Left" Margin="473,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" Height="30" Visibility="Hidden"/>
+        <Label x:Name="lblMoneyPerRound_Copy1" Content="Einsatz" HorizontalAlignment="Left" Margin="473,105,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
         <Label Name="lblFehlermeldung" Content="Fehlermeldung" HorizontalAlignment="Left" Margin="474,110,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <TextBox x:Name="lblColor" HorizontalAlignment="Left" Margin="473,307,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Height="30" Visibility="Hidden"   />
-        <Label x:Name="txtColor" Content="Farbe:" HorizontalAlignment="Left" Margin="473,275,0,0" VerticalAlignment="Top" Visibility="Hidden" />
+        <Label x:Name="lblColor" Content="Farbe:" HorizontalAlignment="Left" Margin="473,275,0,0" VerticalAlignment="Top" Visibility="Hidden" />
         <Label Name="lblErebnis" Content="Ergebnis:" HorizontalAlignment="Left" Margin="240,141,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnGameRoundStarter" Content="Spiel Starten" HorizontalAlignment="Left" Margin="474,356,0,0" VerticalAlignment="Top" Height="43" Width="124"  Background="White" BorderBrush="#FF080808" Click="btnGameRoundStarter_Click" Visibility="Hidden"/>
+        <ComboBox x:Name="ComboColorBox" HorizontalAlignment="Left" Margin="473,307,0,0" VerticalAlignment="Top" Width="285" SelectionChanged="ComboBox_SelectionChanged" Visibility="Hidden"/>
+
     </Grid>
 </Window>

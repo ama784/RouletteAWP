@@ -8,7 +8,7 @@ namespace Roulette
 {
     public  class Player
     {
-        public  event ValueChangesHandler ValueChanged;
+        public event ValueChangesHandler ValueChanged;
         public static string Name { get; set; }
         public static int PlayRounds { get; set; }
         public static double Cash { get; set; }

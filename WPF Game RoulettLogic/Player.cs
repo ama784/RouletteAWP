@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace WPF_Game_RoulettLogic
 {
-    public  class Player
+    public class Player
     {
-        public  event ValueChangesHandler ValueChanged;
-        public static string Name { get; set; }
-        public static int PlayRounds { get; set; }
-        public static double Cash { get; set; }
-        public static string SetOnColor { get; set; }
-        public static int SetOnNumber { get; set; }
-
-        public static double CurrentAccountBalance { get; set; }
-
+        public event ValueChangesHandler ValueChanged;
+        public string Name { get; set; }
+        public string SetColor { get; set; }
+        public double RoundMoney { get; set; }
+        
+        public int SetOnNumber { get; set; }
+        public double CurrentAccountBalance { get; set; }
+        public Spiellogic Spiellogic;
         public void OnValueChanged()
         {
             ValueChanged?.Invoke(this, new ValueChangeEventArgs());
@@ -29,13 +28,15 @@ namespace WPF_Game_RoulettLogic
 
         public void PlayerGetToPlayRoom(Player player)
         {
-            //player.ValueChanged += Program.MyValueChanged;
+            Spiellogic = new Spiellogic();
+            Spiellogic.player = player;
+            player.ValueChanged += Spiellogic.MyValueChanged;
 
         }
 
         public void PlayerLeaveThePlayRoom(Player player)
         {
-            //player.ValueChanged -= Program.MyValueChanged;
+            player.ValueChanged -= Spiellogic.MyValueChanged;
         }
     }
 }
