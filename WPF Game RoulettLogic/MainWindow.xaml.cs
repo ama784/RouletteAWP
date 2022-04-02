@@ -12,7 +12,7 @@ namespace WPF_Game_RoulettLogic
     public partial class MainWindow : Window
     {
         private Player player = new Player();
-        private ValueChangeEventArgs VCEA;
+        public static ValueChangeEventArgs VCEA;
         public MainWindow()
         {
             InitializeComponent();
@@ -86,7 +86,7 @@ namespace WPF_Game_RoulettLogic
         public void InVisibleGameStuff()
         {
             lblGameCurrentGameBalance.Visibility = Visibility.Visible;
-            Ball.Visibility = Visibility.Visible;
+            
             lblMoneyPerRound_Copy1.Visibility = Visibility.Visible;
             Txt_MoneyPerRound.Visibility = Visibility.Visible;
             lblMoneyPerRound_Copy.Visibility = Visibility.Visible;
@@ -128,6 +128,7 @@ namespace WPF_Game_RoulettLogic
 
                 player.PlayerGetToPlayRoom(player);
                 player.OnValueChanged();
+                UpdateBorderColorNumber(VCEA);
                 player.PlayerLeaveThePlayRoom(player);
                 CheckCurrentAccount();
                 CalculateCurrentsAccountBalance();
@@ -140,6 +141,9 @@ namespace WPF_Game_RoulettLogic
 
         public void UpdateBorderColorNumber(ValueChangeEventArgs e)
         {
+            lblErebnis.Visibility = Visibility.Visible;
+            Ball.Visibility = Visibility.Visible;
+
             BallLbl.Content = e.ResultNumber.ToString();
 
             if(e.ResultColor== "rot")
@@ -162,6 +166,8 @@ namespace WPF_Game_RoulettLogic
             {
                 ComboColorBox.Items.Add(element);
             }
+
+            ComboColorBox.SelectedIndex = 0;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

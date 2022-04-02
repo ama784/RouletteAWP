@@ -27,7 +27,7 @@
         <Label x:Name="lblMoneyPerRound_Copy1" Content="Einsatz" HorizontalAlignment="Left" Margin="473,105,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
         <Label Name="lblFehlermeldung" Content="Fehlermeldung" HorizontalAlignment="Left" Margin="474,110,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
         <Label x:Name="lblColor" Content="Farbe:" HorizontalAlignment="Left" Margin="473,275,0,0" VerticalAlignment="Top" Visibility="Hidden" />
-        <Label Name="lblErebnis" Content="Ergebnis:" HorizontalAlignment="Left" Margin="240,141,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblErebnis" Content="Ergebnis:" HorizontalAlignment="Left" Margin="240,141,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
         <Button x:Name="btnGameRoundStarter" Content="Spiel Starten" HorizontalAlignment="Left" Margin="474,356,0,0" VerticalAlignment="Top" Height="43" Width="124"  Background="White" BorderBrush="#FF080808" Click="btnGameRoundStarter_Click" Visibility="Hidden"/>
         <ComboBox x:Name="ComboColorBox" HorizontalAlignment="Left" Margin="473,307,0,0" VerticalAlignment="Top" Width="285" SelectionChanged="ComboBox_SelectionChanged" Visibility="Hidden"/>
 

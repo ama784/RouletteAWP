@@ -16,7 +16,7 @@ namespace WPF_Game_RoulettLogic
             {
                 this.SetRandomNumberColor(e);
                 ExamineColorNumber(e);
-                //MainWindow.test(e);
+                MainWindow.VCEA = e;
             }
             catch (Exception ex)
             {
